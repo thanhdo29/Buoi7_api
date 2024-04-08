@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Buoi7</string>
+
+    <string-array name="sort_options">
+        <item>Giá tăng dần</item>
+        <item>Giá giảm dần</item>
+    </string-array>
 </resources>
+
+

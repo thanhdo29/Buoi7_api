@@ -1,76 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddCarActivity"
-    android:orientation="vertical"
-    android:padding="10dp">
+    tools:context=".AddCarActivity">
 
-    <TextView
-        android:layout_marginTop="100dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thêm xe"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddCarActivity"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <EditText
-        android:id="@+id/edtNameCarAdd"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custum_edt"
-        android:hint="Tên xe"/>
-    <EditText
-        android:id="@+id/edtPriceCarAdd"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custum_edt"
-        android:hint="Giá xe"/>/>
-    <EditText
-        android:id="@+id/edtYearCarAdd"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custum_edt"
-        android:hint="Năm sản xuất xe"/>/>
-    <EditText
-        android:id="@+id/edtCompanyCarAdd"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custum_edt"
-        android:hint="Hãng xe"/>/>
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
         <TextView
-            android:id="@+id/tvChoiceImg"
+            android:layout_marginTop="100dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chọn ảnh"
-            android:textSize="16dp"/>
-        <ImageView
+            android:text="Thêm xe"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
+        <EditText
+            android:id="@+id/edtNameCarAdd"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custum_edt"
+            android:hint="Tên xe"/>
+        <EditText
+            android:id="@+id/edtPriceCarAdd"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custum_edt"
+            android:hint="Giá xe"/>
+        <EditText
+            android:id="@+id/edtYearCarAdd"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custum_edt"
+            android:hint="Năm sản xuất xe"/>
+        <EditText
+            android:id="@+id/edtCompanyCarAdd"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custum_edt"
+            android:hint="Hãng xe"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tvChoiceImgAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn ảnh"
+                android:textSize="16dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_from_gallery"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Lưu"
+            android:layout_gravity="center"
+            android:id="@+id/btnAddCar"/>
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lưu"
-        android:layout_gravity="center"
-        android:id="@+id/btnAddCar"/>
-</LinearLayout>
+</ScrollView>
+
+

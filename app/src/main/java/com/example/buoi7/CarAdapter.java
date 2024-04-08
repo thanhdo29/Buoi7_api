@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.buoi7.model.Car;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -74,6 +75,9 @@ public class CarAdapter extends BaseAdapter {
         tvHang.setText(String.valueOf(carList.get(position).getHang()));
 
         tvGia.setText(String.valueOf(carList.get(position).getGia()));
+
+        String imageUrl = carList.get(position).getImageUrl();
+        Picasso.get().load(imageUrl).into(imgAvatar);
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override

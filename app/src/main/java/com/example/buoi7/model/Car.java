@@ -3,22 +3,23 @@ package com.example.buoi7.model;
 import java.io.Serializable;
 
 public class Car implements Serializable {
-    private  String _id;
-    private  String ten;
+    private String _id;
+    private String ten;
     private int namSx;
     private String hang;
     private double gia;
-
+    private String imageUrl; // Thêm thuộc tính để lưu URL của ảnh
 
     public Car() {
     }
 
-    public Car(String _id, String ten, int namSx, String hang, double gia) {
+    public Car(String _id, String ten, int namSx, String hang, double gia, String imageUrl) {
         this._id = _id;
         this.ten = ten;
         this.namSx = namSx;
         this.hang = hang;
         this.gia = gia;
+        this.imageUrl = imageUrl;
     }
 
     public String get_id() {
@@ -60,5 +61,12 @@ public class Car implements Serializable {
     public void setGia(double gia) {
         this.gia = gia;
     }
-}
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+}

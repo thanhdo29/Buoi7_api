@@ -2,6 +2,7 @@ package com.example.buoi7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,9 +36,7 @@ public class UpdateCarActivity extends AppCompatActivity {
             .baseUrl(APIService.DOMAIN)
             .addConverterFactory(GsonConverterFactory.create())
             .client(new OkHttpClient.Builder()
-                    .connectTimeout(30, TimeUnit.SECONDS)
-                    .writeTimeout(30, TimeUnit.SECONDS)
-                    .readTimeout(30, TimeUnit.SECONDS)
+
                     .build())
             .build();
 
@@ -76,10 +75,10 @@ public class UpdateCarActivity extends AppCompatActivity {
 
 
 
-                String nameCar=edtNameCar.getText().toString();
-                String yearCar=edtYearCar.getText().toString();
-                String companyCar=edtCompanyCar.getText().toString();
-                String priceCar=edtPriceCar.getText().toString();
+                String nameCar=edtNameCar.getText().toString().trim();
+                String yearCar=edtYearCar.getText().toString().trim();
+                String companyCar=edtCompanyCar.getText().toString().trim();
+                String priceCar=edtPriceCar.getText().toString().trim();
 
                 if (nameCar.isEmpty() || yearCar.isEmpty()|| companyCar.isEmpty()|| priceCar.isEmpty()){
                     Toast.makeText(UpdateCarActivity.this, "Vui lòng nhập đủ thông tin", Toast.LENGTH_SHORT).show();
@@ -96,7 +95,10 @@ public class UpdateCarActivity extends AppCompatActivity {
                     public void onResponse(Call<Car> call, Response<Car> response) {
                         if (response.isSuccessful()) {
                             Toast.makeText(UpdateCarActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
-
+                            fetchCarList();
+                            Intent intent = new Intent(UpdateCarActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
                     }
 
@@ -114,5 +116,25 @@ public class UpdateCarActivity extends AppCompatActivity {
 
 
     }
+
+    private void fetchCarList() {
+        apiService.getCar().enqueue(new Callback<List<Car>>() {
+            @Override
+            public void onResponse(Call<List<Car>> call, Response<List<Car>> response) {
+                if (response.isSuccessful()) {
+                    carList.clear();
+                    carList.addAll(response.body());
+                    carAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Car>> call, Throwable t) {
+                Log.e("Fetch Car List", "Lỗi khi lấy danh sách xe: " + t.getMessage());
+                Toast.makeText(UpdateCarActivity.this, "Không thể lấy danh sách xe: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
 }

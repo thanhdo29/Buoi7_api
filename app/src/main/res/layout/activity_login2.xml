@@ -13,19 +13,18 @@
         android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đăng ký"
+        android:text="Đăng nhập"
         android:textSize="35sp"
         android:textStyle="bold"
         android:layout_gravity="center"/>
 
     <TextView
-        android:layout_marginTop="9dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tên đăng nhập"
         android:textSize="20sp"/>
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtUserLoginNode"
         android:layout_marginTop="7dp"
         android:padding="8dp"
         android:background="@drawable/custum_edt"
@@ -34,42 +33,37 @@
         />
 
     <TextView
-        android:layout_marginTop="9dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mật khẩu"
         android:textSize="20sp"/>
     <EditText
-        android:id="@+id/edtPass"
+        android:id="@+id/edtPassLoginNode"
         android:layout_marginTop="7dp"
         android:padding="8dp"
         android:background="@drawable/custum_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
-    <TextView
-        android:layout_marginTop="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nhập lại mật khẩu"
-        android:textSize="20sp"/>
-    <EditText
-        android:id="@+id/edtRePass"
-        android:layout_marginTop="7dp"
-        android:padding="8dp"
-        android:background="@drawable/custum_edt"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
-
-    <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSignup"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng nhập"
+            android:id="@+id/btnLoginNode"
+            android:layout_weight="1"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đăng ký"
-            android:layout_marginHorizontal="70dp"
-            />
+            android:layout_marginLeft="5dp"
+            android:id="@+id/btnSignUpLoginNode"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
 
 </LinearLayout>

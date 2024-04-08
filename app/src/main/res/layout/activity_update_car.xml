@@ -61,9 +61,9 @@
             android:text="Chọn ảnh"
             android:textSize="16dp"/>
         <ImageView
-
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/img_from_gallery_update"/>
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton

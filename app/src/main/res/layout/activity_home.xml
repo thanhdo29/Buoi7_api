@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    android:padding="10dp">
 
     <TextView
         android:layout_marginTop="20dp"
@@ -14,10 +15,33 @@
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:id="@+id/tvQl"/>
+
+        <EditText
+            android:maxLines="1"
+            android:drawableEnd="@drawable/baseline_search_24"
+            android:imeOptions="actionSearch"
+            android:layout_below="@+id/tvQl"
+            android:layout_weight="1"
+            android:hint="Tìm kếm"
+            android:id="@+id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+
+    <Spinner
+        android:id="@+id/spinnerSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtSearch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:entries="@array/sort_options"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvQl"
+        android:layout_below="@id/spinnerSort"
         android:id="@+id/lvCar"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
